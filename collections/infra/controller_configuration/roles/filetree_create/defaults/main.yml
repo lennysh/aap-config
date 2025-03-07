@@ -1,0 +1,65 @@
+---
+# defaults file for filetree_create
+
+# Controller object lists
+controller_credentials: []
+controller_execution_environments: []
+controller_hosts: []
+controller_inventories: []
+controller_inventory_sources: []
+controller_job_templates: []
+controller_organizations: []
+controller_projects: []
+controller_roles: []
+controller_schedules: []
+controller_settings: []
+controller_teams: []
+controller_user_accounts: []
+controller_workflows: []
+
+# Output directory path
+output_path: "/tmp/filetree_createoutput"
+
+omit_id: true # Uncomment to omit the ID from the filename
+
+# Maximum number of objects to return from the list. If a list view returns more an max_objects an exception will be raised
+query_controller_api_max_objects: 10000
+export_related_objects: false
+
+# Shows a ToDo message for the missing passwords in the credentials output due to the API not exposing them
+# show_credential_todo: true
+
+controller_configuration_filetree_create_secure_logging: "{{ controller_configuration_secure_logging | default('false') }}"
+
+input_tag:
+  - all
+  # - roles
+  # - execution_environments
+  # - instance_groups
+  # - credentials
+organization: 'global'
+
+filetree_create_aap_applications: "common/aap_applications.d"                                          # Done
+filetree_create_aap_organizations: "common/aap_organizations.d"                                        # Nothing changed
+filetree_create_aap_teams: "common/aap_teams.d"                                                        # Done
+filetree_create_aap_user_accounts: "common/aap_user_accounts.d"                                        # Done
+
+filetree_create_controller_settings: "common/controller_settings.d"                                    # Done
+filetree_create_controller_labels: "common/controller_labels.d"                                        # Done
+filetree_create_controller_credential_types: "common/controller_credential_types.d"                    # Doneish
+filetree_create_controller_credentials: "common/controller_credentials.d"                              # Done
+filetree_create_controller_credential_input_sources: "common/controller_credential_input_sources.d"    #
+filetree_create_controller_notifications: "common/controller_notification_templates.d"                 # Done
+filetree_create_controller_projects: "common/controller_projects.d"                                    # Done
+filetree_create_controller_execution_environments: "common/controller_execution_environments.d"        # Doneish
+filetree_create_controller_inventories: "common/controller_inventories.d"                              # Done
+filetree_create_controller_inventories_constructed: "common/controller_inventories_constructed.d"      # Done
+filetree_create_controller_inventory_sources: "common/controller_inventory_sources.d"                  # Done
+filetree_create_controller_instance_groups: "common/controller_instance_groups.d"                      # Doneish
+filetree_create_controller_hosts: "common/controller_hosts.d"                                          # Done
+filetree_create_controller_groups: "common/controller_groups.d"                                        # Done
+filetree_create_controller_templates: "common/controller_job_templates.d"                              # Done
+filetree_create_controller_workflow_job_templates: "common/controller_workflow_job_templates.d"        # Done
+filetree_create_controller_schedules: "common/controller_schedules.d"                                  # Doneish
+filetree_create_controller_roles: "common/controller_roles.d"                                          # Doneish
+...

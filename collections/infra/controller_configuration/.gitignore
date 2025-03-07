@@ -1,0 +1,9 @@
+collections/*
+!collections/requirements.yml
+*.tar.gz
+*.pyc
+id_rsa*
+test
+tests/output
+.vscode
+ansible.cfg
